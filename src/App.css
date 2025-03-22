@@ -1,0 +1,54 @@
+.header {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.content {
+  padding: 1rem;
+  font-size: 1.5rem;
+  .description {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+.problem {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+.problem-title {
+  font-size: 1.5rem;
+}
+.problem-content {
+  padding-top: 1rem;
+  padding-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.logo {
+  height: 3rem;
+  padding-right: 1rem;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    /* animation: logo-spin infinite 0.7s linear; */
+  }
+}
