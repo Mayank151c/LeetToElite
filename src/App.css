@@ -1,54 +1,49 @@
-.header {
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  /* justify-content: center; */
+pre {
+  white-space: pre-wrap;  /* Allows text to wrap */
+  font-size: 1.05rem;
+}
+
+body {
+  filter: drop-shadow(0 0 3rem rgb(187, 95, 2));
 }
 
 .content {
-  padding: 1rem;
-  font-size: 1.5rem;
-  .description {
-    padding-top: 1rem;
-    font-size: 1.2rem;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 60%;
+}
+
+@media (max-width: 1440px) {
+  .content {
+    width: 70%;
   }
 }
 
-.problem {
-  padding-top: 1rem;
-  font-size: 1.2rem;
-}
-.problem-title {
-  font-size: 1.5rem;
-}
-.problem-content {
-  padding-top: 1rem;
-  padding-left: 2rem;
-  font-size: 1.2rem;
+@media (max-width: 1024px) {
+  .content {
+    width: 90%;
+  }
 }
 
-.logo {
-  height: 3rem;
-  padding-right: 1rem;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+@media (max-width: 768px) {
+  .content {
+    width: 95%;
+  }
 }
 
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .logo {
-    /* animation: logo-spin infinite 0.7s linear; */
+    /* animation: logo-spin infinite 1s linear; */
   }
 }

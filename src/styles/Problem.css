@@ -1,0 +1,14 @@
+.problem {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.problem-content {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.sol-head {
+  font-size: 1.25rem;
+  color: rgb(212, 109, 5);
+}

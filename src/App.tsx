@@ -1,46 +1,24 @@
 import 'react';
+import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import './App.css';
-import lteLogo from '/lte.png';
+import AddProblem from './pages/AddProblem';
+import AuthPage from './pages/Auth';
+import Home from './pages/Home';
+import ShowTopics from './pages/ShowTopics';
 
-const problems = [
-  {
-    id: 1,
-    title: 'Set Matrix Zeros',
-    problemStatement: 'Given a matrix if an element in the matrix is 0 then you will have to set its entire column and row to 0 and then return the matrix.',
-    solution: `Set all the elements of the row and column to 0 and then set the corresponding element of the matrix to 0.`,
-  }
-]
-
-function App() {
+export default function App() {
   return (
     <>
-      <div className='header'>
-        <img className='logo' src={lteLogo} alt='LTE logo'/>
-        <div>LeetToElite</div>
-      </div>
-      <hr/>
-      <div className='content'>
-        <div>DSA Preperation</div>
-        <div className='description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consectetur voluptatum quod laborum ut quisquam repellendus, odit quis unde vel? Quisquam quod quam recusandae aliquid consequuntur totam architecto. Quidem, eum.</div>
-        {
-          problems.map((item) => {
-            return (
-              <div className='problem' key={item.id}>
-                <div className='problem-title'><b>{item.id}. {item.title}</b></div>
-                <div className='problem-content'>
-                  <div><b>Problem Statement:</b></div>
-                  <div>{item.problemStatement}</div>
-                  <div><b>Solution:</b></div>
-                  <div>{item.solution}</div>
-                </div>
-              </div>
-            )
-          })
-        }
-      </div>
-      <div className='footer'></div>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<AuthPage isSignUp={false} />} />
+          <Route path="/signup" element={<AuthPage isSignUp={true} />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/problem/topics" element={<ShowTopics />} />
+          <Route path="/problem/add" element={<AddProblem />} />
+          <Route path="*" element={<Navigate to="/login" />} />
+        </Routes>
+      </Router>
     </>
   )
 }
-
-export default App

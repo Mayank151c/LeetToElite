@@ -1,0 +1,37 @@
+#tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem;
+  gap: 2rem;
+}
+
+#tabs div {
+  border: .1rem solid #fff3;
+  border-radius: 10px;
+  height: 5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tabs div:hover {
+  border: .1rem solid #fff9;
+  box-shadow: 1px 1px 1rem rgb(187, 95, 2);
+  background: rgb(187, 95, 2, 10%);
+}
+
+@media (max-width: 768px) {
+  #tabs {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #tabs {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
+  }
+}

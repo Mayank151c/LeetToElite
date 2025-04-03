@@ -1,0 +1,26 @@
+.header {
+  font-size: 1.2rem;
+  display: flex;
+  padding: 0.75rem;
+  z-index: 100;
+  align-items: center;
+}
+
+hr {
+  margin: 0;
+  border: 1px double #fff3;
+}
+
+.logo {
+  position: absolute;
+  height: 2.5rem;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.path {
+  margin: auto;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
