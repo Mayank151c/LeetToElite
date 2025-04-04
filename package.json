@@ -9,10 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "server": "nodemon server/index.cjs"
+    "deploy": "gh-pages -d dist && npm run live",
+    "server": "nodemon server/index.cjs",
+    "live": "start chrome https://mayank151c.github.io/LeetToElite/"
   },
-  "homepage": "https://mayank151c.github.io/LeetToElite",
+  "homepage": "https://mayank151c.github.io/LeetToElite/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
