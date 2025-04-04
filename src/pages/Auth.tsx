@@ -5,6 +5,12 @@ import { Avatar, Button, Checkbox, Container, FormControlLabel, TextField, Typog
 import Icon from '/lte.png';
 import API from '../config';
 
+const autofillStyle = {
+  '& input:-webkit-autofill': {
+    transition: 'background-color 1000s, color 1000s'
+  }
+}
+
 const AuthPage = ({ isSignUp }: { isSignUp: boolean }) => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -32,7 +38,7 @@ const AuthPage = ({ isSignUp }: { isSignUp: boolean }) => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container sx={autofillStyle} component="main" maxWidth="xs">
       <Paper elevation={6} sx={{ p: 4, borderRadius: 2, mt: 8 }}>
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Avatar sx={{ mb: 2, bgcolor: "whitesmoke" }}>
@@ -44,7 +50,7 @@ const AuthPage = ({ isSignUp }: { isSignUp: boolean }) => {
           {error && <Typography color="error">{error}</Typography>}
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <TextField margin="normal" required fullWidth id="username" label="Username" name="username" autoComplete="username" autoFocus />
-            <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete={isSignUp ? "new-password" : "current-password"} />
+            <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete={isSignUp ? "new-password" : "password"} />
             {!isSignUp && <FormControlLabel control={<Checkbox color="primary" />} label="Remember me" />}
             <Button type="submit" fullWidth variant="contained" sx={{ mt: 2, mb: 2 }}>
               {isSignUp ? "Sign Up" : "Sign In"}
