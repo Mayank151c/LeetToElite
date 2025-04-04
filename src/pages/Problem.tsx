@@ -24,6 +24,7 @@ const prblm = {
 
 export default function Problem() {
   const [problem, setProblem] = useState(prblm);
+  setProblem(prblm);
   return <>
     <Header path={problem.title}/>
     <div className='problem' key={problem.id}>

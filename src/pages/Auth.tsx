@@ -25,7 +25,8 @@ const AuthPage = ({ isSignUp }: { isSignUp: boolean }) => {
         await axios.post(API.BASE_URL(`/login`), userDetails, { withCredentials: true });
         navigate("/home");
       }
-    } catch (error: { message: string }) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
       setError(error.message);
     }
   };
